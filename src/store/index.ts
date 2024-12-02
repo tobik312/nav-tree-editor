@@ -1,8 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 
+import navTreeReducer from './features/navTreeSlice';
+
 export const makeStore = () => {
     return configureStore({
         reducer: {
+            navTree: navTreeReducer,
         },
     });
 };
