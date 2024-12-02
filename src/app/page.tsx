@@ -1,7 +1,7 @@
 const IndexPage: React.FC = () => {
-  return <></>;
+    return <></>;
 };
 
 export default IndexPage;
 
-export const dynamic = "force-dynamic";
+export const dynamic = 'force-dynamic';
