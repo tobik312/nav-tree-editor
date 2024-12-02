@@ -3,6 +3,8 @@ import { PropsWithChildren } from 'react';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
+import StoreProvider from '@/store/StoreProvider';
+
 import Container from '@/components/Container';
 
 import './style.css';
@@ -18,7 +20,9 @@ const RootLayout: React.FC<PropsWithChildren> = ({ children }) => {
     return (
         <html lang="en">
             <body className={`bg-body text-black ${InterFont.variable} font-sans`}>
-                <Container>{children}</Container>
+                <StoreProvider>
+                    <Container>{children}</Container>
+                </StoreProvider>
             </body>
         </html>
     );
