@@ -1,0 +1,6 @@
+{
+  "extends": ["next", "next/core-web-vitals", "next/typescript", "prettier"],
+  "rules": {
+    "indent": "warn"
+  }
+}
