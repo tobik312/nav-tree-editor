@@ -1,4 +1,5 @@
 import type { TreeStructure, TreeBaseItem, TreeStructureItem, FlattenTreeItem } from '@/types/TreeStructure';
+import { arrayMove } from '@dnd-kit/sortable';
 
 //AddItemToTree
 export function addItemToTree<T extends TreeBaseItem<I>, I extends string = string>(
