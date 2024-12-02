@@ -1,5 +1,7 @@
+import NavTreeEditor from '@/views/NavTreeEditor';
+
 const IndexPage: React.FC = () => {
-    return <></>;
+    return <NavTreeEditor />;
 };
 
 export default IndexPage;
