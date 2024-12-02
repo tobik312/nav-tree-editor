@@ -3,6 +3,8 @@ import { PropsWithChildren } from 'react';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
+import Container from '@/components/Container';
+
 import './style.css';
 
 const InterFont = Inter({
@@ -15,7 +17,9 @@ const InterFont = Inter({
 const RootLayout: React.FC<PropsWithChildren> = ({ children }) => {
     return (
         <html lang="en">
-            <body className={`bg-body text-black ${InterFont.variable} font-sans`}>{children}</body>
+            <body className={`bg-body text-black ${InterFont.variable} font-sans`}>
+                <Container>{children}</Container>
+            </body>
         </html>
     );
 };
