@@ -8,3 +8,14 @@ export type TreeStructureItem<T extends TreeBaseItem<I>, I extends string = stri
 };
 
 export type TreeStructure<T extends TreeBaseItem<I>, I extends string = string> = TreeStructureItem<T, I>[];
+
+export type FlattenTreeItem<T extends TreeBaseItem<I>, I extends string = string> = TreeStructureItem<T> & {
+    index: number;
+    depth: number;
+    prevSibling: TreeStructureItem<T, I> | null;
+    nextSibling: TreeStructureItem<T, I> | null;
+};
+
+export type FlattenTreeItemComponentProps<T extends TreeBaseItem<I>, I extends string = string> = {
+    item: FlattenTreeItem<T, I>;
+};
