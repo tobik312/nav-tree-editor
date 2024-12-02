@@ -1,10 +1,11 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-import type { TreeBaseItem, TreeStructure } from '@/types/TreeStructure';
+import type { TreeStructure } from '@/types/TreeStructure';
+import type { NavTreeItem } from '@/types/NavItem';
 
 import { addItemToTree, updateTreeItem, deleteTreeItem } from '@/utils/treeUtils';
 
-const initialState: TreeStructure<TreeBaseItem> = [];
+const initialState: TreeStructure<NavTreeItem> = [];
 
 const navTreeSlice = createSlice({
     name: 'NavTree',
@@ -13,13 +14,13 @@ const navTreeSlice = createSlice({
         addNavItem: (state, { payload }: PayloadAction<(typeof initialState)[number]>) => {
             return addItemToTree(state, payload);
         },
-        editNavItem: (state, { payload }: PayloadAction<TreeBaseItem>) => {
+        editNavItem: (state, { payload }: PayloadAction<NavTreeItem>) => {
             return updateTreeItem(state, payload);
         },
         deleteNavItem: (state, { payload }: PayloadAction<string>) => {
             return deleteTreeItem(state, payload);
         },
-        sortNavItems: (_, { payload }: PayloadAction<TreeStructure<TreeBaseItem>>) => {
+        sortNavItems: (_, { payload }: PayloadAction<TreeStructure<NavTreeItem>>) => {
             return payload;
         },
     },
